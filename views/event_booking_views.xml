@@ -6,6 +6,7 @@
                 <field name="model">event.booking</field>
                 <field name="type">form</field>
                 <field name="arch" type="xml">
+                <form>
 	                    <sheet string="Event Booking">
 	                       <group>
 							<field name="event_type"/>
@@ -14,10 +15,14 @@
 							<field name="attending_number"/>
 							<field name="addon_ids"/>
 							<field name="comments"/>
-							<field name="partner_id"/>
+							<field name="name"/>
+							<field name="email"/>
+							<field name="phone"/>
+							<field name="country_id"/>
 							<field name="org_name"/>
 							</group>
 	                    </sheet>
+	                    </form>
                 </field>
             </record>
             
