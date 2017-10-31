@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record model="ir.ui.view" id="base.user_groups_view" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <field position="replace" name="groups_id">
+        <group col="2">
+          <separator colspan="2" string="Application"/>
+          <field name="sel_groups_24" groups="base.group_no_one"/>
+          <newline/>
+          <field name="sel_groups_21_22_23"/>
+          <newline/>
+          <field name="sel_groups_1_13_14"/>
+          <newline/>
+          <field name="sel_groups_19_20"/>
+          <newline/>
+          <field name="sel_groups_11_12"/>
+          <newline/>
+          <field name="sel_groups_3_4"/>
+          <newline/>
+        </group>
+        <group col="4" class="o_label_nowrap">
+          <separator colspan="4" string="Holidays"/>
+          <field name="in_group_17"/>
+          <field name="in_group_18"/>
+          <separator colspan="4" string="Extra Rights" groups="base.group_no_one"/>
+          <field name="in_group_8" groups="base.group_no_one"/>
+          <field name="in_group_5" groups="base.group_no_one"/>
+          <field name="in_group_6" groups="base.group_no_one"/>
+          <field invisible="1" name="in_group_7" groups="base.group_no_one"/>
+          <separator colspan="4" string="Other Extra Rights" groups="base.group_no_one"/>
+          <field name="in_group_9" groups="base.group_no_one"/>
+          <field name="in_group_10" groups="base.group_no_one"/>
+        </group>
+      </field>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="base.view_users_form" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">res.users</field>
+    <field name="name">res.users.groups</field>
+    <field name="priority">16</field>
+    <field name="type">form</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.odoo_studio_leave_re_8a7001f0-9972-42ec-a406-1d5a60ae8caf" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <data>
+        <xpath expr="//calendar[not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="color">user_id</attribute>
+        </xpath>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="hr_holidays.view_holiday_new_calendar" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">hr.holidays</field>
+    <field name="name">Odoo Studio: Leave Request customization</field>
+    <field name="priority">99</field>
+    <field name="type">calendar</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.odoo_studio_hr_holid_6bc85e63-406c-42a1-ad9a-9d2dddb9f5fb" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <data>
+        <xpath expr="//field[@name='name'][not(ancestor::field)]" position="before">
+          <field label="Leaves Already Taken" name="leaves_taken" store="false" ttype="float"/>
+        </xpath>
+        <xpath expr="//field[@name='leaves_taken'][not(ancestor::field)]" position="replace"/>
+        <xpath expr="//field[@name='name'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Occupancy Location</attribute>
+        </xpath>
+        <xpath expr="//field[@name='name'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="attrs">{"required": [["limit","=",True]]}</attribute>
+          <attribute name="required"/>
+        </xpath>
+        <xpath expr="//field[@name='name'][not(ancestor::field)]" position="after">
+          <field name="x_studio_field_FozUG"/>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_FozUG'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Booking Comments</attribute>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_FozUG'][not(ancestor::field)]" position="replace"/>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="hr_holidays.view_holiday_status_normal_tree" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">hr.holidays.status</field>
+    <field name="name">Odoo Studio: hr.holidays.status.normal.tree customization</field>
+    <field name="priority">99</field>
+    <field name="type">tree</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.odoo_studio_hr_holid_11668b66-dd49-47c3-83bf-60f0c4a40d9f" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <data>
+        <xpath expr="//field[@name='name'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Occupancy Location</attribute>
+        </xpath>
+        <xpath expr="//field[@name='categ_id'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Purpose of Booking</attribute>
+        </xpath>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="hr_holidays.edit_holiday_status_form" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">hr.holidays.status</field>
+    <field name="name">Odoo Studio: hr.holidays.status.form customization</field>
+    <field name="priority">99</field>
+    <field name="type">form</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.odoo_studio_hr_holid_aee244fe-9efd-452b-918f-54b6505044ca" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <data>
+        <xpath expr="//field[@name='employee_id'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Customer</attribute>
+        </xpath>
+        <xpath expr="//field[@name='type'][not(ancestor::field)]" position="replace"/>
+        <xpath expr="//field[@name='holiday_status_id'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Occupancy Location</attribute>
+        </xpath>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="hr_holidays.view_holiday_simple" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">hr.holidays</field>
+    <field name="name">Odoo Studio: hr.holidays.report_tree customization</field>
+    <field name="priority">99</field>
+    <field name="type">tree</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.odoo_studio_hr_holid_1dd79724-8edf-4e89-8b4e-2f61d8e23b58" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <data>
+        <xpath expr="//filter[@name='validated'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Approved Bookings</attribute>
+        </xpath>
+        <xpath expr="//filter[@name='gray'][not(ancestor::field)]" position="replace"/>
+        <xpath expr="//filter[@name='department'][not(ancestor::field)]" position="replace"/>
+        <xpath expr="//filter[@name='leaves'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Bookings</attribute>
+        </xpath>
+        <xpath expr="//filter[@name='group_employee'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Customer</attribute>
+        </xpath>
+        <xpath expr="//field[@name='employee_id'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Customer</attribute>
+        </xpath>
+        <xpath expr="//field[@name='holiday_status_id'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Customer Type</attribute>
+        </xpath>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="hr_holidays.view_hr_holidays_filter" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">hr.holidays</field>
+    <field name="name">Odoo Studio: hr.holidays.filter customization</field>
+    <field name="priority">99</field>
+    <field name="type">search</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.default_kanban_view__49eb6090-fa88-4477-8b5b-63a254751eb3" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <kanban string="Leave">
+        <templates>
+          <t t-name="kanban-box">
+            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+              <div class="o_kanban_card_content">
+                <field name="name" modifiers="{}"/>
+              </div>
+            </div>
+          </t>
+        </templates>
+      </kanban>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" eval="False"/>
+    <field name="mode">primary</field>
+    <field name="model">hr.holidays</field>
+    <field name="name">Default kanban view for hr.holidays</field>
+    <field name="priority">16</field>
+    <field name="type">kanban</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.default_form_view_fo_de9150f1-db61-4115-ab1e-51c536138a87" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <form>
+        <sheet string="Customer">
+          <div class="oe_title">
+            <h1>
+              <field name="x_name" required="1"/>
+            </h1>
+          </div>
+          <group name="studio_group_f3db60">
+            <group name="studio_group_f3db60_left"/>
+            <group name="studio_group_f3db60_right"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" eval="False"/>
+    <field name="mode">primary</field>
+    <field name="model">x_</field>
+    <field name="name">Default form view for x_</field>
+    <field name="priority">16</field>
+    <field name="type">form</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.odoo_studio_leave_re_ce4910bf-7b7a-4773-9b8e-be2bccc140a0" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <data>
+        <xpath expr="//field[@name='employee_id'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Customer ID</attribute>
+        </xpath>
+        <xpath expr="//field[@name='holiday_status_id'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Occupancy Location</attribute>
+        </xpath>
+        <xpath expr="//field[@name='report_note'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Remarks</attribute>
+        </xpath>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="hr_holidays.edit_holiday_new" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">hr.holidays</field>
+    <field name="name">Odoo Studio: Leave Request customization</field>
+    <field name="priority">99</field>
+    <field name="type">form</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.default_form_view_fo_e345a044-66b1-47c3-9635-8db36e69d3f1" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <form>
+        <sheet string="Customer">
+          <div class="oe_title">
+            <h1>
+              <field name="x_name" required="1"/>
+            </h1>
+          </div>
+          <group name="studio_group_687f92">
+            <group name="studio_group_687f92_left"/>
+            <group name="studio_group_687f92_right"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" eval="False"/>
+    <field name="mode">primary</field>
+    <field name="model">x_customer</field>
+    <field name="name">Default form view for x_customer</field>
+    <field name="priority">16</field>
+    <field name="type">form</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.default_tree_view_fo_72e3902a-40fe-44c5-90d4-4fc0dca6a367" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <tree string="Customer">
+        <field name="x_name" modifiers="{}"/>
+      </tree>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" eval="False"/>
+    <field name="mode">primary</field>
+    <field name="model">x_customer</field>
+    <field name="name">Default tree view for x_customer</field>
+    <field name="priority">16</field>
+    <field name="type">tree</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.odoo_studio_default__eb2b5066-1244-4f67-9760-1ee0f75e6edd" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <data>
+        <xpath expr="//field[@name='x_name'][not(ancestor::field)]" position="before">
+          <field label="Display Name" name="display_name" store="false" ttype="char"/>
+        </xpath>
+        <xpath expr="//field[@name='display_name'][not(ancestor::field)]" position="before">
+          <field label="ID" name="id" store="false" ttype="integer"/>
+        </xpath>
+        <xpath expr="//field[@name='id'][not(ancestor::field)]" position="before">
+          <field name="x_studio_field_O2u9H"/>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_O2u9H'][not(ancestor::field)]" position="replace"/>
+        <xpath expr="//field[@name='x_name'][not(ancestor::field)]" position="after">
+          <field name="x_studio_field_F6j1s"/>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_F6j1s'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Address</attribute>
+        </xpath>
+        <xpath expr="//field[@name='x_name'][not(ancestor::field)]" position="after">
+          <field label="New Text" name="x_studio_field_O2u9H" store="false" ttype="char"/>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_O2u9H'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Email</attribute>
+        </xpath>
+        <xpath expr="//field[@name='display_name'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Phone Number</attribute>
+        </xpath>
+        <xpath expr="//field[@name='display_name'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="widget">phone</attribute>
+        </xpath>
+        <xpath expr="//field[@name='id'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups">base.group_public</attribute>
+        </xpath>
+        <xpath expr="//field[@name='display_name'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups">studio_customization.holidays_customers_478b6fe2-1552-4bfc-ade8-c0561594632f</attribute>
+        </xpath>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="studio_customization.default_tree_view_fo_72e3902a-40fe-44c5-90d4-4fc0dca6a367" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">x_customer</field>
+    <field name="name">Odoo Studio: Default tree view for x_customer customization</field>
+    <field name="priority">99</field>
+    <field name="type">tree</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.default_tree_view_fo_680d1f0f-4b5b-4139-90b7-817a31dae218" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <tree string="Customer">
+        <field name="x_name" modifiers="{}"/>
+      </tree>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" eval="False"/>
+    <field name="mode">primary</field>
+    <field name="model">x_</field>
+    <field name="name">Default tree view for x_</field>
+    <field name="priority">16</field>
+    <field name="type">tree</field>
+  </record>
+  <record model="ir.ui.view" id="studio_customization.odoo_studio_default__8ec4901d-83ca-4dc8-ad11-72367b7e74ff" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field type="xml" name="arch">
+      <data>
+        <xpath expr="//field[@name='x_name'][not(ancestor::field)]" position="before">
+          <field name="x_studio_field_GpN6S"/>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_GpN6S'][not(ancestor::field)]" position="replace"/>
+        <xpath expr="//field[@name='x_name'][not(ancestor::field)]" position="after">
+          <field name="x_studio_field_T58hz"/>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_T58hz'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Address</attribute>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_T58hz'][not(ancestor::field)]" position="after">
+          <field name="x_studio_field_ADkRy"/>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_ADkRy'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="string">Remarks</attribute>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_ADkRy'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="attrs">{}</attribute>
+          <attribute name="required">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='x_studio_field_T58hz'][not(ancestor::field)]" position="attributes">
+          <attribute name="groups"/>
+          <attribute name="attrs">{}</attribute>
+          <attribute name="required">1</attribute>
+        </xpath>
+      </data>
+    </field>
+    <field name="field_parent" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field ref="studio_customization.default_tree_view_fo_680d1f0f-4b5b-4139-90b7-817a31dae218" name="inherit_id"/>
+    <field name="mode">extension</field>
+    <field name="model">x_</field>
+    <field name="name">Odoo Studio: Default tree view for x_ customization</field>
+    <field name="priority">99</field>
+    <field name="type">tree</field>
+  </record>
+</odoo>

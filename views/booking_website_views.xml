@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<odoo>
+
+<!-- View Event Booking -->
+<record id="event_booking" model="ir.ui.view">
+    <field name="name">Event Booking</field>
+    <field name="type">qweb</field>
+    <field name="key">website.event_booking</field>
+    <field name="arch" type="xml">
+    <t name="Event Booking" t-name="website.event_booking">    
+	  <t t-call="website.layout">
+    
+	    
+            <div class="form-group">
+                <label for="event_type" class="control-label">What type of event are you organising? *</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div>	
+            
+             <div class="form-group">
+                <label class="control-label">When would you like it to take place? *</label>
+             </div>
+             <div>
+                <label for="date_frrom" class="control-label">from:</label>
+                <input type="text" name="date_from" t-att-value="date_from" id="date_from" class="form-control" autofocus="autofocus"
+                    autocapitalize="off" required="required" />
+                    
+                <label for="date_frrom" class="control-label">to:</label>
+                <input type="text" name="date_to" t-att-value="date_to" id="date_to" class="form-control" autofocus="autofocus"
+                    autocapitalize="off" required="required" />                    
+            </div>  
+            <div class="form-group">
+                <label for="event_type" class="control-label">How Many attendees are expected?*</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+            <div class="form-group">
+                <label for="event_type" class="control-label">Would you like additional services?</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div>     
+            
+            <div class="form-group">
+                <label for="event_type" class="control-label">Additional comments (optional)</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+            
+            <div class="form-group">
+                <label for="event_type" class="control-label">Contact Details*</label>
+
+            </div>     
+            
+            <div class="form-group">
+                <label for="event_type" class="control-label">Title</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+            <div class="form-group">
+                <label for="event_type" class="control-label">*Email</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+            <div class="form-group">
+                <label for="event_type" class="control-label">*First Name</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+            <div class="form-group">
+                <label for="event_type" class="control-label">*Phone</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+            <div class="form-group">
+                <label for="event_type" class="control-label">*Last Name</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+            <div class="form-group">
+                <label for="event_type" class="control-label">*Country</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+            <div class="form-group">
+                <label for="event_type" class="control-label">*Organisation</label>
+                <input type="text" name="event_type" t-att-value="event_type" required="1" id="event_type" class="form-control" autofocus="autofocus"
+                    autocapitalize="off"  />
+            </div> 
+
+            
+               
+                           
+	  </t>
+	  </t>
+	  </field>
+  </record>
+
+<!-- Page Event Booking -->
+ <record id="event_booking_page" model="website.page">
+     <field name="url">/event_booking</field>
+     <field name="website_published">True</field>
+     <field name="view_id" ref="event_booking" />
+ </record>
+<!-- Menu Event Booking -->
+
+<record id="event_booking_link" model="website.menu">
+<!--   <field name="name">Event Booking</field>
+  <field name="parent_id" ref="website.main_menu" />
+  <field name="sequence" type="int">99</field>
+ -->   <field name="page_id" ref="event_booking_page" />
+  
+</record>
+
+
+
+
+
+
+</odoo>

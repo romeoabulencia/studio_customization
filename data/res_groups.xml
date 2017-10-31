@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record model="res.groups" id="studio_customization.holidays_booking_b7ba9a38-4be9-4909-8922-e4e3d50c96a4" context="{'studio': True}">
+    <field name="color" eval="False"/>
+    <field name="comment" eval="False"/>
+    <field name="implied_ids" eval="[(6, 0, [])]"/>
+    <field name="is_portal" eval="False"/>
+    <field name="name">Booking</field>
+    <field name="share" eval="False"/>
+  </record>
+  <record model="res.groups" id="studio_customization.holidays_customers_478b6fe2-1552-4bfc-ade8-c0561594632f" context="{'studio': True}">
+    <field name="color" eval="False"/>
+    <field name="comment" eval="False"/>
+    <field name="implied_ids" eval="[(6, 0, [])]"/>
+    <field name="is_portal" eval="False"/>
+    <field name="name">Customers</field>
+    <field name="share" eval="False"/>
+  </record>
+</odoo>

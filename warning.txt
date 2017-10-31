@@ -1,0 +1,26 @@
+The following relational data haven't been exported because they either refer
+to a model that Studio doesn't export, or have no XML id:
+
+Record: studio_customization.holidays_booking_b7ba9a38-4be9-4909-8922-e4e3d50c96a4
+Model: res.groups
+Field: category_id
+Type: many2one
+Value: ir.module.category(51,) (u'Holidays')
+
+Record: studio_customization.holidays_booking_b7ba9a38-4be9-4909-8922-e4e3d50c96a4
+Model: res.groups
+Field: users
+Type: many2many
+Value: res.users(1,) (u'siowch820913@gmail.com')
+
+Record: studio_customization.holidays_customers_478b6fe2-1552-4bfc-ade8-c0561594632f
+Model: res.groups
+Field: category_id
+Type: many2one
+Value: ir.module.category(51,) (u'Holidays')
+
+Record: studio_customization.holidays_customers_478b6fe2-1552-4bfc-ade8-c0561594632f
+Model: res.groups
+Field: users
+Type: many2many
+Value: res.users(6,) (u'Customer Helmy')

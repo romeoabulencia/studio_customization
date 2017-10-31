@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record model="ir.ui.menu" id="hr.menu_hr_root" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hr.group_hr_manager'), ref('hr.group_hr_user')])]"/>
+    <field name="name">User Profiles</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">75</field>
+    <field name="web_icon">hr,static/description/icon.png</field>
+  </record>
+  <record model="ir.ui.menu" id="studio_customization.user_profiles_custom_4834babf-0a60-4912-9804-45b9e72924b4" context="{'studio': True}">
+    <field ref="studio_customization.customers_30fc404f-30ea-447f-8912-eead6a66f16c" name="action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_public')])]"/>
+    <field name="name">Customers</field>
+    <field ref="hr.menu_hr_root" name="parent_id"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record model="ir.ui.menu" id="studio_customization.user_profiles_custom_5b683472-3779-493e-bbc5-2a67673b03c8" context="{'studio': True}">
+    <field ref="studio_customization.customer_213a0eac-3ef3-402a-aae2-72cd5261e2a0" name="action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_public')])]"/>
+    <field name="name">Customer</field>
+    <field ref="hr.menu_hr_root" name="parent_id"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record model="ir.ui.menu" id="studio_customization.user_profiles_custom_342c9492-344e-4b99-b0d8-744324298077" context="{'studio': True}">
+    <field ref="studio_customization.customer_9cf41f43-3011-47af-8b1d-24289c4d5d11" name="action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_public')])]"/>
+    <field name="name">Customer</field>
+    <field ref="hr.menu_hr_root" name="parent_id"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record model="ir.ui.menu" id="studio_customization.user_profiles_custom_095dfaef-6080-48c1-8f3d-b113ba7a5e60" context="{'studio': True}">
+    <field ref="studio_customization.customer_ca360c7f-26d5-45b6-a2eb-6945c3492933" name="action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('studio_customization.holidays_booking_b7ba9a38-4be9-4909-8922-e4e3d50c96a4'), ref('base.group_public')])]"/>
+    <field name="name">Customer</field>
+    <field ref="hr.menu_hr_root" name="parent_id"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+</odoo>
