@@ -11,6 +11,7 @@ It contains the apps created with Studio and the customizations of existing apps
     'depends': [
         u'base',
         'website',
+        'crm',
 #         u'hr',
 #         u'hr_holidays',
     ],
@@ -24,6 +25,7 @@ It contains the apps created with Studio and the customizations of existing apps
 #         'data/ir_model_access.xml',
 
         'views/booking_website_views.xml',
+        'views/event_booking_views.xml',
     ],
     'application': False,
     'license': u'OPL-1',

@@ -1,0 +1,2 @@
+import booking_addon
+import event_booking

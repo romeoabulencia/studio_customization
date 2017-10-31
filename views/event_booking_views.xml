@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+           <record model="ir.ui.view" id="event_booking_form_view">
+                <field name="name">event.booking.form</field>
+                <field name="model">event.booking</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+	                    <sheet string="Event Booking">
+	                       <group>
+							<field name="event_type"/>
+							<field name="date_from"/>
+							<field name="date_to"/>
+							<field name="attending_number"/>
+							<field name="addon_ids"/>
+							<field name="comments"/>
+							<field name="partner_id"/>
+							<field name="org_name"/>
+							</group>
+	                    </sheet>
+                </field>
+            </record>
+            
+            <record model="ir.ui.view" id="event_booking_tree_view">
+                <field name="name">event.booking.tree</field>
+                <field name="model">event.booking</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Event Booking">
+                        <field name="event_type"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="attending_number"/>
+                            <field name="name"/>
+
+                    </tree>
+                </field>
+            </record>            
+            
+                        <record model="ir.actions.act_window" id="action_event_booking_tree_view">
+                <field name="name">Event Booking</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">event.booking</field> 
+		   <!-- <field name="domain">[('field_name','condition',criteria)]</field>-->
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="event_booking_tree_view"/>
+            </record>
+            
+           <record model="ir.ui.view" id="booking_addon_form_view">
+                <field name="name">booking.addon.form</field>
+                <field name="model">booking.addon</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <sheet string="Booking Addon">
+                        <field name="name" select="1"/>
+                    </sheet>
+                </field>
+            </record>            
+            
+            <record model="ir.ui.view" id="booking_addon_tree_view">
+                <field name="name">booking.addon.tree</field>
+                <field name="model">booking.addon</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="Booking Addon">
+                        <field name="name"/>
+                    </tree>
+                </field>
+            </record>
+            
+            <record model="ir.actions.act_window" id="action_booking_addon_tree_view">
+                <field name="name">booking.addon</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">booking.addon</field>
+		   <!-- <field name="domain">[('field_name','condition',criteria)]</field>-->
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="booking_addon_tree_view"/>
+            </record>
+            
+
+
+<menuitem name="Event Booking" id="menu_event_booking_main" parent="crm.crm_menu_root"/>
+<menuitem name="Event Booking" id="menu_event_booking_action" action="action_event_booking_tree_view" parent="menu_event_booking_main"/>
+<menuitem name="Booking Addon" id="menu_event_booking_addon_action" action="action_booking_addon_tree_view"  parent="menu_event_booking_main"/>
+
+</odoo>
